@@ -4,9 +4,9 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '../components/BookStore.js'
+import TodoApp from '../components/TodoApp.js'
 
 ReactDOM.render(
-    <App/>,document.getElementById('app')
+    <TodoApp/>,document.getElementById('app')
 )
 

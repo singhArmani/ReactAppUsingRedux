@@ -30,6 +30,7 @@ export default function reducer(state, action){
             });
 
         case 'DELETE_TODO':
+            console.log("arrived at delete to do action")
             return Object.assign({}, state, {todos: state.todos.filter((todo) =>{
                 return todo.id !== action.id
             })});

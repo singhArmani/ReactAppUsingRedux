@@ -9,7 +9,7 @@ export default class TodoList extends React.Component {
 
     RenderList(listItem){
         return (
-                <TodoItem key={listItem.id} todo={listItem} />
+                <TodoItem key={listItem.id} todo={listItem} dispatch={this.props.dispatch} />
         );
     }
 

@@ -6,12 +6,19 @@ export default class TodoList extends React.Component {
 
     }
 
+    RenderList(list){
+        return (
+                <li key={list.id}><h4>{list.text} <small>{list.completed ? 'Completed' : 'Not Completed'}</small></h4></li>
+        );
+    }
 
     render(){
-        return (
-           <div>
-               This is a Todo List
-           </div>
-        );
+            var todosList = this.props.todos.map((todolist)=> this.RenderList(todolist));
+            return (
+                <ul>
+                    {todosList}
+                </ul>
+            );
+
     }
 }

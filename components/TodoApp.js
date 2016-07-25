@@ -4,7 +4,9 @@
 import React from 'react';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList'
-export default class TodoApp extends React.Component {
+import { connect } from 'react-redux'
+
+class TodoApp extends React.Component {
     constructor(props){
         super(props);
 
@@ -14,9 +16,18 @@ export default class TodoApp extends React.Component {
     render(){
         return (
             <div>
-                <TodoInput/>
-                <TodoList/>
+                <h1>Todo List</h1>
+                <TodoInput dispatch ={this.props.dispatch}/>
+                <TodoList  todos={this.props.todos}/>
             </div>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return state;
+}
+
+//using connect
+
+export default connect(mapStateToProps)(TodoApp)

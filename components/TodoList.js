@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoItem from './TodoItem';
 
 export default class TodoList extends React.Component {
     constructor(props){
@@ -6,14 +7,14 @@ export default class TodoList extends React.Component {
 
     }
 
-    RenderList(list){
+    RenderList(listItem){
         return (
-                <li key={list.id}><h4>{list.text} <small>{list.completed ? 'Completed' : 'Not Completed'}</small></h4></li>
+                <TodoItem key={listItem.id} todo={listItem} />
         );
     }
 
     render(){
-            var todosList = this.props.todos.map((todolist)=> this.RenderList(todolist));
+            var todosList = this.props.todos.map((todolistItem)=> this.RenderList(todolistItem));
             return (
                 <ul>
                     {todosList}
